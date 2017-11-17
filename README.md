@@ -31,7 +31,7 @@ function(filePath, algorithm):string
 对应hashFile()的同步方法。返回hash值。
 
 ## hashContent
-function (content:string, algorithm:string, callback:function(err:Error,data:string))
+function (content:string, algorithm:string, callback:function(err:Error,data:string)) :undefined
 
 异步的获取传入文本的hash值。
 
