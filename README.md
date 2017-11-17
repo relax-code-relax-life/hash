@@ -10,7 +10,8 @@ let { hashFile , hashFileSync , hashContent , hashContentSync , stream , algorit
 # API
 
 ## algorithms
-Array<string>
+Array\<string\>
+
 支持的hash方法。 例如: 'md5' , 'sha' 等。
 
 ## hashFile
