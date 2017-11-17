@@ -13,6 +13,13 @@
     "wangwl",
     "wangweilin"
   ],
+  "license": "ISC",
   "author": "wangwl",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitee.com/w-wl/hash.git"
+  },
+  "bugs": {
+    "url": "https://gitee.com/w-wl/hash/issues"
+  }
 }
