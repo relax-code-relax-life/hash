@@ -22,7 +22,7 @@ var hashFile = function (filePath, algorithm, callback) {
     var hash = bindHash(algorithm, callback);
     if(hash===undefined) return;
     var inputStream = fs.createReadStream(filePath);
-    inputStream.on('error', (err) => callback);
+    inputStream.on('error', callback);
     inputStream.pipe(hash);
 };
 
