@@ -1,11 +1,15 @@
 {
   "name": "relax-hash",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "node hash utils. Such as md5, sha, and so on.",
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js"
   },
+  "files": [
+    "index.js",
+    "es3Hash.js"
+  ],
   "keywords": [
     "md5",
     "sha256",
