@@ -1,56 +1,85 @@
-# 依赖
-node.js 8.x
+# Installation
 
-# 下载
-npm install wwl-hash
-
-# 使用
-let { hashFile , hashFileSync , hashContent , hashContentSync , stream , algorithms } = require('wwl-hash');
+npm install relax-hash
 
 # API
 
-## algorithms
-Array\<string\>
+```javascript
+const {
+    algorithms,
+    hashFile, hashFileSync, hashFilePromise,
+    hashContent, hashContentSync, hashContentPromise,
+    stream
+} = require('relax-hash');
+```
 
-支持的hash方法。 例如: 'md5' , 'sha' 等。
+## algorithms
+
+`string[]`
+
+An array of the names of the supported hash algorithms, such as `"md5"`,`"sha256"`.
 
 ## hashFile
-function( filePath:string|Buffer|URL, algorithm:string, callback:function(err:Error,data:string) ) :undefined
 
-异步的获取文件hash值。
+`function (filePath: string | Buffer | URL, algorithm: string, callback: (err: Error, data: string) => void): void`
+
 ```javascript
 const filePath = 'test.txt';
-hash.hashFile(filePath, 'md5', (err, md5) => {
+hashFile(filePath, 'md5', (err, md5) => {
     console.log(md5);
 })
 ```
 
 ## hashFileSync
-function(filePath, algorithm):string
 
-对应hashFile()的同步方法。返回hash值。
-
-## hashContent
-function (content:string, algorithm:string, callback:function(err:Error,data:string)) :undefined
-
-异步的获取传入文本的hash值。
+`function (filePath: string | Buffer | URL, algorithm = 'md5'): string`
 
 ```javascript
-hash.hashContent('testContent', 'md5', (err, md5) => {
-   console.log(md5);
-   //"bae941e0d1cdf42b75d6d0ef6bd7d25a"
+const md5 = hashFileSync('test.txt');
+console.log('md5')
+```
+
+## hashFilePromise
+
+`async function (filePath: string | Buffer | URL, algorithm = 'md5'): Promise<string>`
+
+```javascript
+hashFilePromise('test.txt').then(md5 => console.log(md5))
+```
+
+## hashContent
+
+`function (content: string, algorithm: string, callback: (err: Error, data: string) => void): void`
+
+```javascript
+hashContent('testContent', 'md5', (err, md5) => {
+    console.log(md5);
+    //"bae941e0d1cdf42b75d6d0ef6bd7d25a"
 })
 ```
 
 ## hashContentSync
-function (content, algorithm):string
 
-对应hashContent()的同步方法，返回hash值。
+`function (content: string, algorithm = 'md5'): string`
+
+```javascript
+console.log(hashContentSync('testContent')); // bae941e0d1cdf42b75d6d0ef6bd7d25a
+```
+
+## hashContentPromise
+
+`function (content: string, algorithm = 'md5'): Promise<string>`
+
+```javascript
+hashContentPromise('testContent').then(md5 => console.log(md5))
+```
 
 ## stream
-function (algorithm:string, callback:function(err:Error,data:string)):stream.Writable
+
+function (algorithm: string, callback: (err: Error, data: string) => void): stream.Writable
 
 该方法返回一个可写流(准确的说，是Hash实例)，计算写入流的数据的hash值。
+
 ```javascript
 var stream = hash.stream('md5', (err, md5) => {
     console.log(md5);

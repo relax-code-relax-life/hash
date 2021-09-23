@@ -1,25 +1,27 @@
 {
-  "name": "wwl-hash",
-  "version": "1.0.1",
-  "description": "node hash utils.",
+  "name": "relax-hash",
+  "version": "2.0.1",
+  "description": "node hash utils. Such as md5, sha, and so on.",
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js"
   },
   "keywords": [
-    "hash",
     "md5",
+    "sha256",
+    "hash",
+    "crypto",
     "wwl",
-    "wangwl",
-    "wangweilin"
+    "wangwl"
   ],
   "license": "ISC",
   "author": "wangwl",
+  "homepage": "https://wangwl.net/static/pages/mynpm_hash.html",
   "repository": {
     "type": "git",
-    "url": "git+https://gitee.com/w-wl/hash.git"
+    "url": "https://github.com/relax-code-relax-life/hash"
   },
   "bugs": {
-    "url": "https://gitee.com/w-wl/hash/issues"
+    "url": "https://github.com/relax-code-relax-life/hash/issues"
   }
 }
