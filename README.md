@@ -38,7 +38,7 @@ hashFile(filePath, 'md5', (err, md5) => {
 
 ```javascript
 const md5 = hashFileSync('test.txt');
-console.log('md5')
+console.log(md5)
 ```
 
 ## hashFilePromise
