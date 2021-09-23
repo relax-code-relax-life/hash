@@ -78,7 +78,7 @@ hashContentPromise('testContent').then(md5 => console.log(md5))
 
 ## stream
 
-function (algorithm: string, callback: (err: Error, data: string) => void): stream.Writable
+`function (algorithm: string, callback: (err: Error, data: string) => void): stream.Writable`
 
 该方法返回一个可写流(准确的说，是Hash实例)，计算写入流的数据的hash值。
 
