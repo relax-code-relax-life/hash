@@ -11,7 +11,7 @@ const {
     algorithms,
     hashFile, hashFileSync, hashFilePromise,
     hashContent, hashContentSync, hashContentPromise,
-    stream
+    hashStream
 } = require('relax-hash');
 ```
 
@@ -76,14 +76,14 @@ console.log(hashContentSync('testContent')); // bae941e0d1cdf42b75d6d0ef6bd7d25a
 hashContentPromise('testContent').then(md5 => console.log(md5))
 ```
 
-## stream
+## hashStream
 
 `function (algorithm: string, callback: (err: Error, data: string) => void): stream.Writable`
 
 该方法返回一个可写流(准确的说，是Hash实例)，计算写入流的数据的hash值。
 
 ```javascript
-var stream = hash.stream('md5', (err, md5) => {
+var stream = hashStream('md5', (err, md5) => {
     console.log(md5);
     //"bae941e0d1cdf42b75d6d0ef6bd7d25a"
 });

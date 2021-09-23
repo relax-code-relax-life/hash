@@ -131,7 +131,7 @@ module.exports = {
     hashContent,
     hashContentSync,
     hashContentPromise,
-    stream: bindHash,
+    hashStream: bindHash,
     algorithms: hashes.slice(0)
 }
 
