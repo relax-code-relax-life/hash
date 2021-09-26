@@ -1,3 +1,5 @@
+Creating hash digests of files or strings. Such as md5, sha, and so on.
+
 # Installation
 
 ```shell
